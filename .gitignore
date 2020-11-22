@@ -35,3 +35,5 @@ dropbear-*
 dropbear-*/
 build-*/
 target/
+libs/
+obj/

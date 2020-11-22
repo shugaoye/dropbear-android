@@ -43,7 +43,7 @@ COMPILER=${TOOLCHAIN}/bin/arm-linux-androideabi-gcc
 STRIP=${TOOLCHAIN}/bin/arm-linux-androideabi-strip
 SYSPREFIX="${ANDROID_NDK_HOME}/platforms/android-${API}/arch-"
 ARCH=(arm x86 mips)
-PREFIX=(arm-linux-androideabi-  x86- mipsel-linux-android-)
+PREFIX=(arm-linux-androideabi- x86- mipsel-linux-android-)
 CCPREFIX=(arm-linux-androideabi- i686-linux-android- mipsel-linux-android-)
 
 SYSROOT="${SYSPREFIX}arm"
@@ -87,7 +87,7 @@ for I in $(seq 0 $((${#ARCH[@]} - 1))); do
 		clear
 		sleep 1
 		# Create the output directory
-		mkdir -p $TARGET/${ARCH[$I]};
+		mkdir -p bin;
 		for PROGRAM in $PROGRAMS; do
 
 			if [ ! -f $PROGRAM ]; then
@@ -97,8 +97,8 @@ for I in $(seq 0 $((${#ARCH[@]} - 1))); do
 			$STRIP "./${PROGRAM}"
 		done
 
-		cp $PROGRAMS $TARGET/${ARCH[$I]}
-		echo "Compilation successful. Output files are located in: ${TARGET}/${ARCH[$I]}"
+		cp $PROGRAMS bin
+		echo "Compilation successful. Output files are located in: build-${ARCH[$I]}/bin"
 	else
 		echo "Compilation failed."
 	fi

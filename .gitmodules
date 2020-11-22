@@ -1,0 +1,3 @@
+[submodule "android_external_dropbear"]
+	path = jni
+	url = git@github.com:shugaoye/android_external_dropbear.git
