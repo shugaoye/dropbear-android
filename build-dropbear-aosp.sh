@@ -7,6 +7,6 @@ else
         echo ANDROID_NDK_HOME=${ANDROID_NDK_HOME}
 fi
 
-cp Application.mk android_external_dropbear/Application.mk
+cp Application.mk jni/Application.mk
 export NDK_PROJECT_PATH=`pwd`
 ${ANDROID_NDK_HOME}/ndk-build

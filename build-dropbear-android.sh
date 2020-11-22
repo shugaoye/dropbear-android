@@ -42,9 +42,9 @@ TOOLCHAIN=${ANDROID_NDK_HOME}/toolchains/arm-linux-androideabi-4.9/prebuilt/linu
 COMPILER=${TOOLCHAIN}/bin/arm-linux-androideabi-gcc
 STRIP=${TOOLCHAIN}/bin/arm-linux-androideabi-strip
 SYSPREFIX="${ANDROID_NDK_HOME}/platforms/android-${API}/arch-"
-ARCH=(arm x86 mips)
-PREFIX=(arm-linux-androideabi- x86- mipsel-linux-android-)
-CCPREFIX=(arm-linux-androideabi- i686-linux-android- mipsel-linux-android-)
+ARCH=(aarch64 arm x86 mips)
+PREFIX=(aarch64-linux-android- arm-linux-androideabi- x86- mipsel-linux-android-)
+CCPREFIX=(aarch64-linux-android- arm-linux-androideabi- i686-linux-android- mipsel-linux-android-)
 
 SYSROOT="${SYSPREFIX}arm"
 
